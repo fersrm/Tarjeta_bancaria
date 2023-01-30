@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+:root{
+   --fondo: linear-gradient(180deg, rgba(100,72,254,1) 32%, rgba(96,5,148,1) 59%);
+   --error:#ff5252;
+   --White: #ffffff;
+   --Light_grayish_violet: #b8b7b9;
+   --Dark_grayish_violet: #8e8593;
+   --Very_dark_violet: #21092f;
+}
+*{
+   box-sizing: border-box;
+}
+.gg{
+   display: none;
+ }
+
+body{
+   margin: 0;
+   padding: 0;
+   font-size: 18px;
+   font-family: 'Space Grotesk', sans-serif;
+   position: relative;
+}
+.contenedor{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.contenedor_tarjeta{
+   width: 100%;
+   background-image: url(images/bg-main-mobile.png);
+   background-size: cover;
+   color: var(--White);
+   height: 220px;
+   display: flex;
+   align-items: center;
+   letter-spacing: 1px;
+}
+.contenedor_tarjeta span{
+   font-size: 12px;
+   text-transform: uppercase;
+}
+.contenedor_tarjeta p{
+   margin: 0;
+}
+.tarjeta,.tarjeta_reverso{
+   background-image: url(images/bg-card-front.png);
+   background-size: cover;
+   border-radius: 5px;
+   width: 300px;
+   height: 160px;
+   display: flex;
+}
+.tarjeta{
+   z-index: 10;
+   position: absolute;
+   left: 3%;
+   top: 17%;
+   padding: 1rem;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.tarjeta_reverso{
+   background-image: url(images/bg-card-back.png);
+   position: relative;
+   left: 17%;
+   bottom: 4%;
+   align-items: center;
+}
+.logo_tarjeta{
+   background-image: url(images/card-logo.svg);
+   background-size: cover;
+   width: 30px;
+   height: 30px;
+   display: flex;
+   align-items: center;
+}
+.logo_tarjeta::after{
+   content: '';
+   display: block;
+   width: 15px;
+   height: 15px;
+   border:1px solid var(--White);
+   border-radius: 50%;
+   position: relative;
+   left: 140%;
+}
+.datos_tarjeta{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.datos_tarjeta span{
+   margin-top: 0.5rem ;
+}
+.tarjeta strong{
+   font-weight: 500;
+   font-size: 22px;
+   width: 100%;
+}
+.tarjeta_reverso span{
+   position: relative;
+   left: 80%;
+}
+/*formulario*/
+.contenedor_formulario{
+   width: 90%;
+   margin-top: 6rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.contenedor_formulario form,.contenedor_paso{
+   max-width: 400px;
+}
+input{
+   width: 100%;
+}
+label{
+   margin-top:1rem;
+   margin-bottom: 0.4rem;
+   display: block;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-size: 15px;
+}
+input{
+   color: var(--Very_dark_violet);
+   font-size: 18px;
+   border: 1px solid var(--Dark_grayish_violet);
+   border-radius: 5px;
+   padding: 10px;
+   cursor: pointer;
+}
+input:hover{
+   outline: 1px solid #9500ff;
+}
+
+input::placeholder{
+   color:var(--Light_grayish_violet)
+}
+.tercera_parte{
+   display: flex;
+   justify-content: space-between;
+}
+.fecha{
+   width: 45%;
+}
+.fecha input{
+   width: 45%;
+}
+.cvc{
+   width: 55%;
+}
+button{
+   color: var(--Dark_grayish_violet);
+   background-color: var(--Very_dark_violet);
+   border: none;
+   width: 100%;
+   padding: 1rem 0;
+   border-radius: 10px;
+   margin-top: 2rem;
+   font-size: 20px;
+   cursor: pointer;
+}
+button:hover{
+   background-color: var(--Dark_grayish_violet);
+   color: var(--Very_dark_violet);
+}
+.alerta{
+   color: var(--error);
+   margin-top: 3px;
+   font-size: 12px;
+   display: none;
+}
+/*error*/
+.error input,.Fecha_error{
+   border: none;
+   outline: 1px solid var(--error);
+}
+.error .alerta,.mal .alerta{
+   display: block;
+}
+/*correcto*/
+.correcto input,.Fecha_correcto{
+   border: none;
+   outline: 1px solid #0adf0a;
+}
+/*---------*/
+
+.contenedor_paso{
+   text-align: center;
+   width: 100%;
+   display: none;
+}
+.contenedor_paso img{
+   margin: 2rem 0;
+}
+.contenedor_paso strong{
+   font-size: 2rem;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+.contenedor_paso p{
+   color: var(--Light_grayish_violet);
+}
+
+footer{
+   margin-top: 2rem;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:850px) {
+   .contenedor{
+      flex-direction: row;
+      justify-content: space-between;
+   }
+   .contenedor_tarjeta{
+      width: 20%;
+      height: 100vh;
+      background-image: url(images/bg-main-desktop.png);
+      position: relative;
+   }
+   .contenedor_formulario{
+      width: 65%;
+      align-items: center;
+      margin: 0
+   }
+   .tarjeta_reverso{
+      left: 5%;
+      bottom: 22%;
+      position: absolute;
+   }
+   .tarjeta{
+      left: 5%;
+   }
+   .tarjeta,.tarjeta_reverso{
+      box-shadow: 0 0 10px rgba(33, 9, 47, 0.624);
+      width: 350px;
+      height: 200px;
+   }
+   .tarjeta strong{
+      font-size: 26px;
+   }
+   .logo_tarjeta{
+      width: 40px;
+      height: 40px;
+   }
+   .logo_tarjeta::after{
+      width: 20px;
+      height: 20px;
+   }
+   .contenedor_formulario form,.contenedor_paso{
+      width: 80%;
+   }
+   footer{
+      position: absolute;
+      bottom: 0;
+      left: 60%;
+   }
+}
+@media screen and (min-width:1180px) {
+   .contenedor_tarjeta{
+      width: 30%;
+   }
+   .tarjeta,.tarjeta_reverso{
+      width: 380px;
+      height: 220px;
+   }
+   .tarjeta strong{
+      font-size: 29px;
+   }
+   .tarjeta_reverso{
+      left: 55%;
+   }
+   .tarjeta{
+      left: 40%;
+   }
+}
