@@ -154,7 +154,7 @@ input::placeholder{
    width: 55%;
 }
 button{
-   color: var(--Dark_grayish_violet);
+   color: var(--Light_grayish_violet);
    background-color: var(--Very_dark_violet);
    border: none;
    width: 100%;
@@ -259,7 +259,7 @@ footer{
    footer{
       position: absolute;
       bottom: 0;
-      left: 60%;
+      width: 100%;
    }
 }
 @media screen and (min-width:1180px) {
