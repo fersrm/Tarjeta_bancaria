@@ -39,7 +39,15 @@ const validarFromulario = (e) =>{
             if (e.target.value.length == 0 ){
                 num.innerHTML="0000 0000 0000 0000";
             }else if(e.target.value.length < 20){
-                num.innerHTML=e.target.value;
+                
+                let inputValue = e.target.value;
+                // format number input to 0000 0000 0000 0000
+                inputValue = inputValue
+                    .replace(/\D/g, "")
+                    .replace(/(\d{4})/g, "$1 ")
+                    .trim();
+                e.target.value = inputValue;
+                num.innerHTML = inputValue;
             }
         break;
         case "mes":
